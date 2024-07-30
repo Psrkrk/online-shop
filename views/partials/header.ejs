@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      .hero-bg {
+        background-image: url("https://source.unsplash.com/random/1600x900");
+      }
+    </style>
+  </head>
+
+  <body
+    class="overflow-hidden font-['helvetica_now_display'] bg-cover bg-center bg-no-repeat bg-fixed"
+    style="
+      background-image: url('https://wallpaperboat.com/wp-content/uploads/2020/11/10/60057/shopping-07.jpg');
+    "
+  >
+    <nav class="flex justify-between w-full px-5 py-3 bg-white bg-opacity-80">
+      <h3 class="text-xl font-bold">Scatch</h3>
+      <% var loggedin = typeof loggedin !== "undefined" ? loggedin : true; %> <%
+      if (loggedin) { %>
+      <div class="flex items-center gap-5">
+        <a href="/" class="text-gray-700 hover:text-gray-900">Shop</a>
+        <a href="/cart" class="text-gray-700 hover:text-gray-900">Cart</a>
+        <a href="/account" class="text-gray-700 hover:text-gray-900"
+          >My Account</a
+        >
+        <a class="text-red-600 hover:text-red-800" href="/users/logout"
+          >Logout</a
+        >
+        <button
+          class="px-4 py-2 font-bold text-white bg-green-500 rounded hover:bg-green-600"
+          onclick="window.location.href='/order'"
+        >
+          Order Now
+        </button>
+      </div>
+      <% } %>
+    </nav>
+  </body>
+</html>

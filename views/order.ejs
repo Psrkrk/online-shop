@@ -1,0 +1,71 @@
+<%- include('./partials/header') %>
+<div class="max-w-lg p-8 mx-auto bg-white rounded-lg shadow-lg">
+  <h1 class="mb-4 text-2xl font-bold">Order Now</h1>
+  <form id="orderForm" class="space-y-4">
+    <div>
+      <label for="productName" class="block text-gray-700">Product Name</label>
+      <input
+        type="text"
+        id="productName"
+        name="productName"
+        class="w-full p-2 border border-gray-300 rounded"
+      />
+    </div>
+    <div>
+      <label for="size" class="block text-gray-700">Size</label>
+      <input
+        type="text"
+        id="size"
+        name="size"
+        class="w-full p-2 border border-gray-300 rounded"
+      />
+    </div>
+    <div>
+      <label for="price" class="block text-gray-700">Price</label>
+      <input
+        type="text"
+        id="price"
+        name="price"
+        class="w-full p-2 border border-gray-300 rounded"
+      />
+    </div>
+    <button type="submit" class="w-full p-2 text-white bg-blue-500 rounded">
+      Order Now
+    </button>
+  </form>
+</div>
+<script>
+  document
+    .getElementById("orderForm")
+    .addEventListener("submit", function (event) {
+      event.preventDefault();
+      const productName = document.getElementById("productName").value;
+      const size = document.getElementById("size").value;
+      const price = document.getElementById("price").value;
+
+      if (!productName || !size || !price) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      fetch("/order-now", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          productName,
+          size,
+          price,
+        }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.success) {
+            alert("Order succeede");
+          } else {
+            alert("Failed to place order.");
+          }
+        });
+    });
+</script>

@@ -1,0 +1,73 @@
+<%- include('./partials/header') %> <% if (error && error.length > 0) { %>
+<div
+  class="absolute p-3 -translate-x-1/2 -translate-y-1/2 bg-red-500 rounded-md top-5 left-1/2"
+>
+  <span class="inline-block mt-1 mb-1 text-white"><%= error %></span>
+</div>
+<% } %>
+<div class="flex w-full h-screen px-20">
+  <div class="justify-between flex-initial w-1/2">
+    <div class="w-full px-32">
+      <h3 class="text-4xl">
+        <div
+          class="bg-[url('path/to/your/image.jpg')] bg-cover bg-center h-80 w-full"
+        >
+          <!-- Your content here -->
+        </div>
+
+        Welcome to <span class="font-semibold text-blue-400">Scatch</span>
+      </h3>
+      <h4 class="mb-5 text-2xl">Create your account</h4>
+      <form autocomplete="off" action="/users/register" method="post">
+        <input
+          class="block w-full p-4 px-3 py-2 mb-3 border-2 rounded-md bg-zinc-100"
+          type="text"
+          placeholder="Full Name"
+          name="fullname"
+        />
+        <input
+          class="block w-full p-4 px-3 py-2 mb-3 border-2 rounded-md bg-zinc-100"
+          type="email"
+          placeholder="Email"
+          name="email"
+        />
+        <input
+          class="bg-zinc-100 block w-full px-3 py-2 border-black-[1px] rounded-md mb-3"
+          type="password"
+          placeholder="Password"
+          name="password"
+        />
+        <input
+          class="px-5 py-3 mt-2 text-white bg-blue-500 rounded-full"
+          type="submit"
+          value="Create My Account"
+        />
+      </form>
+    </div>
+  </div>
+  <div class="flex items-center justify-center w-1/2 h-screen">
+    <div class="w-full px-32">
+      <h4 class="mb-5 text-2xl capitalize">Login to your account</h4>
+      <form autocomplete="off" action="/users/login" method="post">
+        <input
+          class="block w-full p-4 px-3 py-2 mb-3 border-2 rounded-md bg-zinc-100"
+          type="email"
+          placeholder="Email"
+          name="email"
+        />
+        <input
+          class="block w-full px-3 py-2 mb-3 border-2 rounded-md bg-zinc-100"
+          type="password"
+          placeholder="Password"
+          name="password"
+        />
+        <input
+          class="block px-5 py-3 mt-2 text-white bg-blue-500 rounded-full"
+          type="submit"
+          value="Login"
+        />
+      </form>
+    </div>
+  </div>
+</div>
+<%- include('./partials/footer') %>

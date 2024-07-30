@@ -1,0 +1,45 @@
+<%- include('./partials/header') %>
+
+<div
+  class="flex items-center justify-center h-64 text-white bg-center bg-cover hero-bg"
+>
+  <h1 class="text-4xl font-bold">My Account</h1>
+</div>
+
+<div class="container p-5 mx-auto mt-5 bg-white rounded-lg shadow-lg">
+  <div class="flex items-center mb-5">
+    <img
+      class="w-32 h-32 mr-5 rounded-full"
+      src="https://picsum.photos/200"
+      alt="Profile Image"
+    />
+    <div>
+      <h2 class="text-2xl font-bold"><%= user.name %></h2>
+      <p class="text-gray-600"><%= user.email %></p>
+    </div>
+  </div>
+  <div class="flex flex-col space-y-4">
+    <div>
+      <h3 class="text-lg font-semibold">Account Details</h3>
+      <p>
+        <strong>Username:</strong>
+        <%= user.username %>
+      </p>
+      <p>
+        <strong>Phone:</strong>
+        <%= user.phone %>
+      </p>
+      <p>
+        <strong>Address:</strong>
+        <%= user.address %>
+      </p>
+    </div>
+    <div>
+      <h3 class="text-lg font-semibold">Order History</h3>
+      <!-- Placeholder for order history -->
+      <p class="text-gray-500">No orders yet.</p>
+    </div>
+  </div>
+</div>
+
+<%- include('./partials/footer') %>
