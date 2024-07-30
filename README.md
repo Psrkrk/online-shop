@@ -1,5 +1,8 @@
 Online Shop 
+
 Description
+
+
 This project is a full-featured online shopping application designed to provide a seamless e-commerce experience. The application features a user-friendly interface and includes essential functionalities such as user registration, login, profile management, and shopping cart management. Built with modern web technologies, it leverages HTML, Tailwind CSS, and JavaScript on the frontend, and utilizes Express.js with MongoDB on the backend for robust data handling.
 
 Features
